@@ -8,5 +8,8 @@ namespace microbitBot {
     export function forward(distance: number) : void {
         const run_time = distance * 500;
         basic.showString("HELLO!" + run_time);
+        pins.digitalWritePin(DigitalPin.P0, 1);
+        pause(run_time);
+        pins.digitalWritePin(DigitalPin.P0, 0);
     }
 }
